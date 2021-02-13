@@ -12,7 +12,7 @@ BASE_URL = 'https://memes.com/search/?term='
 MEME_LIST_CLASS = 'pt-5 js-post-tiles-container js-search-feed d-flex flex-wrap justify-content-between post-tile-row'
 BASE_MEME_URL = "https://memes.com"
 MEME_CLASS = 'post-media-container'
-RECURSION_LIMIT = 3
+UNABLE_TO_LOAD = 'https://i.kym-cdn.com/photos/images/newsfeed/001/668/803/f75.jpg'
 
 application = Flask(__name__)
 
@@ -35,15 +35,12 @@ def get_random_meme():
 
 
 @application.route('/getSpecificMeme/<keyword>')
-def get_specific_meme(keyword: str, depth=0) -> str:
+def get_specific_meme(keyword: str) -> str:
     """
     :param depth: Recursion depth
     :param keyword: keyword to split
     :return: URL to image
     """
-
-    if depth > RECURSION_LIMIT:
-        raise Exception("Not able to retrieve images")
 
     init_url = BASE_URL + '+'.join(keyword.split())
     print('URL formed', init_url)
@@ -69,14 +66,14 @@ def get_specific_meme(keyword: str, depth=0) -> str:
     list_memes_section = soup.find(class_=MEME_LIST_CLASS)
     list_memes = list_memes_section.findAll("a")
     hrefs = []
-    for i in list_memes:
+    for i in list_memes[:5]:
         if i['href'] is not None:
             hrefs.append(i['href'])
     print('Random meme hrefs', hrefs)
 
-    # In case not able to retrieve details, recurse
+    # In case not able to retrieve details, return unable to load
     if len(hrefs) == 0:
-        get_specific_meme(keyword, depth + 1)
+        return UNABLE_TO_LOAD
 
     """
     Obtain the actual image of meme using another scrape
