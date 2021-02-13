@@ -3,6 +3,7 @@
 ### Team Mongyfishy
 - Nandika Jain
 - Jishnu Raj Parashar
+- Rishit Gupta
 - Divyansh Rastogi
 
 ## To Run Backend Services
