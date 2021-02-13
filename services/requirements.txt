@@ -1,0 +1,17 @@
+beautifulsoup4
+lxml
+future
+selenium
+requests
+webdriver-manager
+certifi
+chardet
+click
+Flask
+idna
+itsdangerous
+Jinja2
+MarkupSafe
+simplejson
+urllib3
+Werkzeug
