@@ -19,8 +19,8 @@ const searchForMeme = async memeName => {
     const response = await axios.get(`${api}/getSpecificMeme/${memeName}`);
     const response2 =await axios.get(`${api}/getRandomMeme`)
     loading.style.display = "none";
-    exactMeme.textContent = response.data;
-    randomMeme.textContent = response2.data;
+    exactMeme.src = response.data;
+    randomMeme.src = response2.data;
     results.style.display = "block";
   } catch (error) {
     loading.style.display = "none";
