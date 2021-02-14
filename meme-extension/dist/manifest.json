@@ -3,7 +3,7 @@
   "name": "Meme Extension!",
   "version": "0.1.0",
 
-  "permissions": ["<all_urls>", "contextMenus"],
+  "permissions": ["<all_urls>", "contextMenus", "activeTab", "tabs"],
 
   "browser_action": {
     "default_popup": "index.html"
