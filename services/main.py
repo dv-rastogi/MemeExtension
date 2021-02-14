@@ -138,13 +138,12 @@ def get_urban_definition(choice: str, keyword: str) -> str:
     response = requests.request("GET", BASE_URBAN_URL, headers=headers, params=querystring)
     definitions = json.loads(response.text)['list']
 
-    # If no definition found
-    if len(definitions) == 0:
-        return NOT_FOUND
-
     # get the first definition
     req = None
     if choice == "definition":
+        # If no definition found
+        if len(definitions) == 0:
+            return NOT_FOUND
         req_string = definitions[0]['definition']
         req = "" # filter in built hyper links
         for ch in req_string:
@@ -158,7 +157,9 @@ def get_urban_definition(choice: str, keyword: str) -> str:
             if sounds[-4:] == '.wav':
                 got = sounds
                 break
+        print(got)
         if got is None:
+            print("SOUND_NOT_FOUND")
             return "SOUND_NOT_FOUND"
         else:
             r = requests.get(got, allow_redirects=True)
