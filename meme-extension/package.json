@@ -8,6 +8,7 @@
     "watch": "webpack --watch",
     "build": "webpack"
   },
+  "type": "module",
   "keywords": [
     "chrome extension",
     "meme generator"

@@ -12,14 +12,12 @@ contextMenus.createUDString =
             }
         }
     );
-
 chrome.contextMenus.onClicked.addListener(contextMenuHandler);
 
 function contextMenuHandler(info, tab){
     if(info.menuItemId===contextMenus.createUDString){
         chrome.tabs.executeScript(tab.ib, {
-
-            file: 'getWord.js'
+            file : "getWord.js"
         }, _=>{
             let e = chrome.runtime.lastError;
             if(e !== undefined){
