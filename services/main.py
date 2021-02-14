@@ -7,14 +7,23 @@ import requests
 from webdriver_manager.chrome import ChromeDriverManager
 import json
 from flask import Flask
+import urllib.request
 
 
 application = Flask(__name__)
 
 
 @application.route('/')
-def index():
-    return "Services are up & running!"
+def index() -> str:
+    """
+    Check internet connection
+    :return: status
+    """
+    try:
+        urllib.request.urlopen('https://www.google.com/')
+        return "Services are up & running!"
+    except:
+        return "Connection Error"
 
 
 @application.route('/getRandomMeme')
