@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            #image {
+                height: 210px;
+                width: 160px;
+                background: url('https://www.google.com/logos/fnbx/friends/duck_walk_loop.png') 0px 0px;
+                margin-left: 0%;
+            }
+        </style>
+
+        <script>
+            var tID;
+
+            var audio_duck = new Audio('https://www.google.com/logos/fnbx/friends/chandler_duck_loop.mp3');
+            audio_duck.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+
+            function animateScript() {
+                var position = 160
+                const interval = 80
+                var leftMargin = 0
+                audio_duck.play();
+                tID = setInterval ( () => {
+                    document.getElementById("image").style.backgroundPosition = `-${position}px 0px`; 
+                    leftMargin += 10
+                    document.getElementById("image").style.marginLeft = leftMargin + 'px'; 
+                    if (position < 5120)
+                        { position = position + 160;}
+                    else
+                        { position = 160; }
+                    }, interval );
+                }
+            
+            function stopAnimate() {
+                audio_duck.pause();
+                clearInterval(tID);
+            } 
+        </script>
+
+    </head>
+    <body>
+        <div>
+            <p id="image" onmouseover="animateScript()" onmouseout="stopAnimate()"> </p>
+        </div>
+    </body>
+</html>

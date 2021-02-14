@@ -123,6 +123,7 @@ def get_urban_definition(choice: str, keyword: str) -> str:
 
     NOT_FOUND = 'https://i.imgflip.com/1k5gq1.jpg'
     BASE_URBAN_URL = "https://mashape-community-urban-dictionary.p.rapidapi.com/define"
+    SOUND_PATH = '../meme-extension/dist/sound.wav'
 
     keyword = ' '.join(keyword.split())
     
@@ -138,6 +139,7 @@ def get_urban_definition(choice: str, keyword: str) -> str:
     if len(definitions) == 0:
         return NOT_FOUND
 
+    # get the first definition
     req = None
     if choice == "definition":
         req_string = definitions[0]['definition']
@@ -146,11 +148,19 @@ def get_urban_definition(choice: str, keyword: str) -> str:
             if (ch != '[') and (ch != ']'):
                 req += ch
     elif choice == "sound":
+        # get only 'wav' file from urban dictionary
         req_list = definitions[0]['sound_urls']
-        if len(req_list) == 0:
+        got = None
+        for sounds in req_list:
+            if sounds[-4:] == '.wav':
+                got = sounds
+                break
+        if got is None:
             return "SOUND_NOT_FOUND"
         else:
-            req = req_list[0]
+            r = requests.get(got, allow_redirects=True)
+            open(SOUND_PATH, 'wb').write(r.content)
+            return SOUND_PATH
     else:
         raise Exception("Invalid request")
     return req
