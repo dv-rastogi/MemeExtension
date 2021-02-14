@@ -1,4 +1,5 @@
 # MemeExtension
+### This project was submitted to Byld+WiT Hackthon 2021
 
 ### Team Mongyfishy
 - Nandika Jain
@@ -13,20 +14,13 @@
 
 ## To Run Extension
 
+- Install npm (in case you haven't)
 - Open shell and navigate to: `MemeExtension / meme-extension`
-
 - Run ` npm install` 
-
 - Run `npm i webpack -g` and `npm i webpack-cli -g`
-
 - Run `webpack` or `npm run build`
-
 - To install in Chrome
-
-- Head over to `chrome://extensions`
-
-  Toggle "Developer mode" on.
-
-  1. Click Load unpacked.
-
-  2. Upload the dist folder to chrome.
+  * Head over to `chrome://extensions`
+      Toggle "Developer mode" on.
+      1. Click Load unpacked.
+      2. Upload the dist folder to chrome.
