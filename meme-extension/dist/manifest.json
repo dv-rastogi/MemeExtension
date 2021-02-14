@@ -1,10 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Meme Extension!",
-  "version": "0.1.0",
-
+  "name": "Mongyfishy meme extension",
+  "version": "0.0.1",
+  "description" : "Your one & only meme dictionary",
   "permissions": ["<all_urls>", "contextMenus", "activeTab", "tabs"],
-
   "browser_action": {
     "default_popup": "index.html"
   },

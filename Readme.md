@@ -17,14 +17,16 @@
 
 - Run ` npm install` 
 
+- Run `npm i webpack -g` and `npm i webpack-cli -g`
+
 - Run `webpack` or `npm run build`
 
 - To install in Chrome
 
-  Head over to `chrome://extensions`
+- Head over to `chrome://extensions`
 
   Toggle "Developer mode" on.
 
-  - Click Load unpacked.
+  1. Click Load unpacked.
 
-  - Upload the dist folder to chrome.
+  2. Upload the dist folder to chrome.
