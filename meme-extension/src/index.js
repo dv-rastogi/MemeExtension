@@ -17,7 +17,12 @@ const searchForMeme = async memeName => {
   errors.textContent = "";
   try {
     const response = await axios.get(`${api}/getSpecificMeme/${memeName}`);
-    const response2 =await axios.get(`${api}/getRandomMeme`)
+    const response2 = await axios.get(`${api}/getRandomMeme`)
+    const response3 = await axios.get(`${api}/getUrban/sound/${memeName}`)
+    if (response3 != "SOUND_NOT_FOUND") {
+      var audio = new Audio("sound.wav");
+      audio.play();
+    }
     loading.style.display = "none";
     exactMeme.src = response.data;
     randomMeme.src = response2.data;
