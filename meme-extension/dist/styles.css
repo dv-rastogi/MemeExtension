@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Truculenta:wght@100;300;600&display=swap');
 .container {
-  width: 25em;
   text-align: center;
 }
 
@@ -57,6 +56,13 @@
 .got-res {
   font-family: "Truculenta", "Lucida Console", "Courier New", monospace;
   font-size: 16px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.got-res-random {
+  font-family: "Truculenta", "Lucida Console", "Courier New", monospace;
+  font-size: 15px;
   margin-top: 1em;
   margin-bottom: 1em;
 }
