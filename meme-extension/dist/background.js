@@ -3,7 +3,7 @@ contextMenus.createUDString =
     chrome.contextMenus.create(
         {
             "id": 'UD_Menu',
-            "title":"Search Urban Dictionary",
+            "title":"Fetch me a meme",
             "contexts" : ['all']
         },
         function (){
