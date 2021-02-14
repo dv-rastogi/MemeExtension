@@ -1,5 +1,5 @@
 # MemeExtension
-### This project was submitted to Byld+WiT Hackthon 2021
+### This project was submitted to Byld+WiT Hackthon 2021 (Make everyone laugh :p)
 
 ### Team Mongyfishy
 - Nandika Jain
