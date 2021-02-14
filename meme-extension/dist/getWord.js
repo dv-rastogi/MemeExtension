@@ -111,11 +111,15 @@ function httpGet(theUrl)
                 return xmlhttp.responseText;
           }
       }
-      xmlhttp.open("GET", theUrl, false );
+      xmlhttp.open("GET", theUrl, true );
       xmlhttp.send();   
   }
 var t=myNewFunction();
-httpGet('http://127.0.0.1:5000/getUrban/definition/'+t)
-httpGetImage('http://127.0.0.1:5000/getSpecificMeme/'+t)
+try {    
+  httpGet('http://127.0.0.1:5000/getUrban/definition/'+t)
+  httpGetImage('http://127.0.0.1:5000/getSpecificMeme/'+t)
+} catch (err) {
+  console.log("Error");
+}
 src="${xmlhttp.responseText}"
 //httpGetSound('http://127.0.0.1:5000/getUrban/sound/'+t);

@@ -19,14 +19,16 @@ const searchForMeme = async memeName => {
     const response = await axios.get(`${api}/getSpecificMeme/${memeName}`);
     const response2 = await axios.get(`${api}/getRandomMeme`)
     const response3 = await axios.get(`${api}/getUrban/sound/${memeName}`)
-    if (response3 != "SOUND_NOT_FOUND") {
-      var audio = new Audio("sound.wav");
-      audio.play();
-    }
     loading.style.display = "none";
     exactMeme.src = response.data;
     randomMeme.src = response2.data;
     results.style.display = "block";
+
+    await new Promise(r => setTimeout(r, 2000));
+    if (response3 != "SOUND_NOT_FOUND") {
+      var audio = new Audio("sound.wav");
+      audio.play();
+    }
   } catch (error) {
     loading.style.display = "none";
     results.style.display = "none";
