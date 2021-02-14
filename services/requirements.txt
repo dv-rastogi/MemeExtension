@@ -15,4 +15,4 @@ MarkupSafe
 simplejson
 urllib3
 Werkzeug
-urllib
+urllib3
