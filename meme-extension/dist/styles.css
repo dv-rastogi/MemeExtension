@@ -1,8 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Truculenta:wght@100;300;600&display=swap');
 .container {
-  margin: 8em;
+  width: 25em;
   text-align: center;
 }
 
 .result {
+  margin-top: 2em;
+}
+
+.heading {
+  font-family: 'Indie Flower', cursive;
+  color: white;
+  background-color: #003b46;
+  padding: 10px 10px 10px 10px;
+  line-height: 30px;
+  margin-bottom: 0.5em;
+  border-radius: 10px;
+}
+
+.container-image {
+  width: 20em;
+  margin-bottom: 1em;
+  border-radius: 50%;
+}
+
+.enter-country {
+  font-family: "Truculenta", "Lucida Console", "Courier New", monospace; 
+  font-size: 22px;
+}
+
+.meme-name {
   margin-top: 1em;
+  width: 80%;
+  border: 2px solid rgb(26, 87, 156);
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 16px;
+}
+
+.search-btn {
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Lucida Console", "Courier New", monospace; 
+  background: rgb(69, 122, 182);
+  border-top: rgb(69, 122, 182);
+  font-weight: bold;
+  color: white;
+  font-size: 13px;
+  padding: 8px;
+}
+
+.cfont {
+  font-family: "Truculenta", "Lucida Console", "Courier New", monospace;
+  font-size: 16px;
+}
+
+.got-res {
+  font-family: "Truculenta", "Lucida Console", "Courier New", monospace;
+  font-size: 16px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
