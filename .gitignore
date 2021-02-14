@@ -1,1 +1,3 @@
 services/test.py
+services/__pycache__
+meme-extension/dist/sound.wav

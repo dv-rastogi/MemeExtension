@@ -8,9 +8,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 from flask import Flask
 import urllib.request
+from flask_cors import CORS
 
 
 application = Flask(__name__)
+CORS(application)
 
 
 @application.route('/')
@@ -58,6 +60,7 @@ def get_specific_meme(keyword: str) -> str:
     BASE_MEME_URL = "https://memes.com"
     MEME_CLASS = 'post-media-container'
     UNABLE_TO_LOAD = 'https://i.kym-cdn.com/photos/images/newsfeed/001/668/803/f75.jpg'
+    DRIVER_NOT_FOUND = 'https://i.ibb.co/vv1xktS/Screenshot-from-2021-02-14-15-03-01.png'
 
     init_url = BASE_URL + '+'.join(keyword.split())
     print('URL formed', init_url)
@@ -73,7 +76,13 @@ def get_specific_meme(keyword: str) -> str:
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+    driver = None
+    try:
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+    except Exception as err:
+        print(err) # Chrome driver not found
+        return DRIVER_NOT_FOUND
+
     driver.get(init_url)
     time.sleep(3)
     init_page = driver.page_source
@@ -109,13 +118,15 @@ def get_specific_meme(keyword: str) -> str:
 @application.route('/getUrban/<choice>/<keyword>')
 def get_urban_definition(choice: str, keyword: str) -> str:
     """
+    :param choice: definition or sound
     :param keyword: keyword to split
     :return: Meaning text
     """
-    print("get_urban_definition() requested for ", choice, keyword)
+    print("get_urban_definition() requested for", choice, keyword)
 
     NOT_FOUND = 'https://i.imgflip.com/1k5gq1.jpg'
     BASE_URBAN_URL = "https://mashape-community-urban-dictionary.p.rapidapi.com/define"
+    SOUND_PATH = '../meme-extension/dist/sound.wav'
 
     keyword = ' '.join(keyword.split())
     
@@ -131,15 +142,28 @@ def get_urban_definition(choice: str, keyword: str) -> str:
     if len(definitions) == 0:
         return NOT_FOUND
 
+    # get the first definition
     req = None
     if choice == "definition":
-        req = definitions[0]['definition']
+        req_string = definitions[0]['definition']
+        req = "" # filter in built hyper links
+        for ch in req_string:
+            if (ch != '[') and (ch != ']'):
+                req += ch
     elif choice == "sound":
+        # get only 'wav' file from urban dictionary
         req_list = definitions[0]['sound_urls']
-        if len(req_list) == 0:
+        got = None
+        for sounds in req_list:
+            if sounds[-4:] == '.wav':
+                got = sounds
+                break
+        if got is None:
             return "SOUND_NOT_FOUND"
         else:
-            req = req_list[0]
+            r = requests.get(got, allow_redirects=True)
+            open(SOUND_PATH, 'wb').write(r.content)
+            return SOUND_PATH
     else:
         raise Exception("Invalid request")
     return req
