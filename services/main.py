@@ -8,9 +8,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 from flask import Flask
 import urllib.request
+from flask_cors import CORS
 
 
 application = Flask(__name__)
+CORS(application)
 
 
 @application.route('/')
@@ -116,6 +118,7 @@ def get_specific_meme(keyword: str) -> str:
 @application.route('/getUrban/<choice>/<keyword>')
 def get_urban_definition(choice: str, keyword: str) -> str:
     """
+    :param choice: definition or sound
     :param keyword: keyword to split
     :return: Meaning text
     """

@@ -16,3 +16,4 @@ simplejson
 urllib3
 Werkzeug
 urllib3
+flask-cors
