@@ -32,7 +32,17 @@ Your **one & only Meme Dictionary** accessible with just a single click! We brin
 
 Hold on, it doesn't end just here! Ever wanted to make your browsing experience more fun? Or ever wanted to come up a with a quick witty meme reply without hastily searching for it on the Internet?! We got you covered!! Just select your text, right click and click "Fetch me a meme" and voila you get a spiced up top Urban Dictionary definition for your text along with a wacky meme straight from memes.com just suited to your needs right then & there!
 
-#### :woozy_face: HAPPY MEMEING!!!! 
+### :woozy_face: HAPPY MEMEING!!!! 
+
+<br>
+
+## :camera: Preview
+<img src = "https://github.com/watch24hrs-iiitd/MemeExtension/blob/master/img_readme/1.png" width = "40%">
+<img src = "https://github.com/watch24hrs-iiitd/MemeExtension/blob/master/img_readme/2.png" width = "40%">
+<img src = "https://github.com/watch24hrs-iiitd/MemeExtension/blob/master/img_readme/3.png" width = "40%">
+<img src = "https://github.com/watch24hrs-iiitd/MemeExtension/blob/master/img_readme/4.png" width = "60%">
+<img src = "https://github.com/watch24hrs-iiitd/MemeExtension/blob/master/img_readme/5.png" width = "60%">
+<img src = "https://github.com/watch24hrs-iiitd/MemeExtension/blob/master/img_readme/6.png" width = "60%">
 
 <br>
 
@@ -53,7 +63,7 @@ Hold on, it doesn't end just here! Ever wanted to make your browsing experience 
 - Run `webpack` or `npm run build`
 - To install extension in Chrome
   * Head over to `chrome://extensions` & Toggle `Developer mode` on.
-      * Click Load `unpacked`
+      * Click `Load unpacked`
       * Upload the `dist` folder to Chrome.
       
 <h4 align = "center">
