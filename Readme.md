@@ -35,7 +35,7 @@
 
 <br>
 
-## 🚀 How TO RUN
+## 🚀 How To Run
 
 ### To Run Backend Services
 - Open shell and navigate to: `MemeExtension / services`
