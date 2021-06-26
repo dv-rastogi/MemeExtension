@@ -24,7 +24,6 @@
 - [Divyansh Rastogi](https://github.com/watch24hrs-iiitd)
 
 ## Presenting ✨ MONGYFISHY's MEME FINDER ✨
-<p align="center"><img src="https://i.ibb.co/swFG4VC/logo.png" width = "30%"></p>
 
 ### :money_mouth_face: WHY YOU NEED THIS a.k.a Description XD
 
