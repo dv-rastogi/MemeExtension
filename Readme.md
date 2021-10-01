@@ -17,7 +17,7 @@
 ### ⚡ DON'T WORRY "WE" GOT YOU FAM
 ![The 'we'](https://media.tenor.com/images/95811dce5fcb5a809378f5566f42ca12/tenor.gif)
 
-### 💪 The "WE" (Team [Mongyfishy](https://www.youtube.com/watch?v=DYTjuuBELOo))
+### 💪 Meet the Team: Team [Mongyfishy](https://www.youtube.com/watch?v=DYTjuuBELOo)
 - [Nandika Jain](https://github.com/nandikajain)
 - [Jishnu Raj Parashar](https://github.com/jishnu19048)
 - [Rishit Gupta](https://github.com/rsus4)
@@ -25,7 +25,7 @@
 
 ## Presenting ✨ MONGYFISHY's MEME FINDER ✨
 
-### :money_mouth_face: WHY YOU NEED THIS a.k.a Description XD
+### Description
 
 Your **one & only Meme Dictionary** accessible with just a single click! We bring you all memes ranging from keyword searches to even unexpected random memes ;) in just a single & simple to use Chrome extension! Even to make it more fun & whoopee, we have incorporated fun Urban Dictionary sounds for all your meme searches!
 
